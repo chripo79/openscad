@@ -87,14 +87,14 @@ use <BOSL/masks.scad>
       resize([oa_width-(2*oa_wallthick)-tolerance,panel_t,oa_height-(2*(oa_wallthick-1))-tolerance]) body_shape();
    }
 
-   module overlap(way){
+   module overlap(way,dist){
       if (way==0){
          for(i=[-(oa_width/2)+(lap_W/2),(oa_width/2)-(lap_W/2)])
-            translate([i,0,0]) cube([lap_W,oa_length,lap_H],center=true);
+            translate([i,0,0]) cube([lap_W,oa_length-(2*dist),lap_H],center=true);
          }
       else if (way ==1){
          for(i=[-(oa_width/2)+(lap_W/2),(oa_width/2)-(lap_W/2)])
-            translate([i,0,0]) cube([lap_W+tolerance,oa_length,lap_H],center=true);
+            translate([i,0,0]) cube([lap_W+tolerance,oa_length+tolerance-(dist*2),lap_H],center=true);
       }
    }
 
@@ -131,23 +131,35 @@ use <BOSL/masks.scad>
       difference(){
             union(){
                split(0,cutline) body_main();
-               translate([0,0,-cutline-(lap_H/2)+tolerance]) overlap(0);
+               translate([0,0,-cutline-(lap_H/2)+tolerance]) overlap(0,5);
             }
-         translate([-((oa_width/2)+0.05),(oa_length/2),-(oa_height/2)+front_low_H]) rotate([front_angle,0,0]) cube([oa_width+0.1,oa_height+20,50]);
+         translate([-((oa_width/2)+0.05),(oa_length/2),-(oa_height/2)+front_low_H])
+         rotate([front_angle,0,0])
+            cube([oa_width+0.1,oa_height+20,50]);
 
       }
    }
+   module bore(){
+      translate([-mbc_hole_space/2,-mbc_hole_space/2,0])
+      for(i=[0,mbc_hole_space])
+         for (j=[0,mbc_hole_space])
+            translate([i,j,0]) cylinder( d=so_id, h=so_h+6, center=true);
+   }
    module lowerhalf(){
-      union(){
-         difference(){
-            split(1,cutline) body_main();
-            translate([0,0,-cutline-(lap_H/2)]) overlap(1);
+      difference(){
+         union(){
+            difference(){
+               split(1,cutline) body_main();
+               translate([0,0,-cutline-(lap_H/2)]) overlap(1,5);
+            }
+            translate([0,-3,-(oa_height/2)+(so_h/2)+(oa_wallthick/2)]) standoff();
          }
-         translate([0,-3,-(oa_height/2)+(so_h/2)+(oa_wallthick/2)]) standoff();
-     }
+      translate([0,-3,-(oa_height/2)+(so_h/2)+(oa_wallthick/2)]) bore();
+
+      }
    }
 
 //standoff();
 lowerhalf();
-//upperhalf();
-translate([0,-3,-17])mbc();
+translate([0,0,2]) upperhalf();
+//translate([0,-3,-17])mbc();
