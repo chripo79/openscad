@@ -112,6 +112,17 @@ use <BOSL/masks.scad>
             translate([0,-(oa_length/2)+panel_t+((flange_b+tolerance)/2),0])panelflange();
       }
    }
+
+   module screwpart(){
+      difference(){
+         union(){
+            cylinder(d=6,h=40);
+            translate([0,-3,0]) cube([5,6,40]);
+         }
+            for(i=[0,oa_height])
+            translate([5,0,i])chamfer_mask_y(6,corner);
+         }
+   }
    module standoff(){
       $fn=32;
       translate([-mbc_hole_space/2,-mbc_hole_space/2,0])
@@ -134,8 +145,8 @@ use <BOSL/masks.scad>
                translate([0,0,-cutline-(lap_H/2)+tolerance]) overlap(0,5);
             }
          translate([-((oa_width/2)+0.05),(oa_length/2),-(oa_height/2)+front_low_H])
-         rotate([front_angle,0,0])
-            cube([oa_width+0.1,oa_height+20,50]);
+            rotate([front_angle,0,0])
+               cube([oa_width+0.1,oa_height+20,50]);
 
       }
    }
@@ -160,6 +171,6 @@ use <BOSL/masks.scad>
    }
 
 //standoff();
-lowerhalf();
-translate([0,0,2]) upperhalf();
+//lowerhalf();
+//translate([0,0,2]) upperhalf();
 //translate([0,-3,-17])mbc();
