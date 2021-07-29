@@ -1,6 +1,7 @@
 /*### Z80 MBC2 pretty case###
 # designed 2021 by C.Pohl 
 # Creative commons##
+#uses the BOSL Library 
 */
 include <BOSL/constants.scad>
 use <BOSL/masks.scad>
@@ -54,15 +55,7 @@ use <BOSL/masks.scad>
 
    }
 // part modules
-   module mbc() {
-      translate([-mbc_size/2,-mbc_size/2,0])
-      difference(){
-         cube([mbc_size,mbc_size,mbc_board_thick]);
-         for(i=[mbc_hole_dist ,mbc_hole_space+mbc_hole_dist])
-            for(j=[mbc_hole_dist ,mbc_hole_space+mbc_hole_dist])
-               translate([i,j,0.2])cylinder(h=4,d=mbc_hole_dia,center=true);
-      }
-   }
+
    module body_shape(){
       difference(){
          cube([oa_width,oa_length,oa_height],center = true);
@@ -78,7 +71,7 @@ use <BOSL/masks.scad>
          translate([0,i,0])
          difference(){
                   resize([oa_width-(2*oa_wallthick),panel_t,oa_height-(2*(oa_wallthick-1)),flange_b])fwpanel();
-                  resize([oa_width-(2*oa_wallthick)-flange_t,panel_t,oa_height-(2*(oa_wallthick-1))-flange_t,2.5*panel_t]) fwpanel();
+                  resize([oa_width-(2*oa_wallthick)-flange_t+0.2,panel_t,oa_height-(2*(oa_wallthick-1))-flange_t,2.5*panel_t]) fwpanel();
          }
 
   }
@@ -99,6 +92,7 @@ use <BOSL/masks.scad>
    }
 
    module body_main(){
+      difference(){
       union(){
          difference(){
             difference(){
@@ -107,20 +101,40 @@ use <BOSL/masks.scad>
             }
             translate([-((oa_width/2)+0.05),(oa_length/2),-(oa_height/2)+front_low_H]) rotate([front_angle,0,0]) cube([oa_width+0.1,oa_height+20,50]);
          }
-         for(i=[0,108])
+         for(i=[0,108]){
             translate([0,i,0])
             translate([0,-(oa_length/2)+panel_t+((flange_b+tolerance)/2),0])panelflange();
+         }
+         translate([(oa_width/2)-5,0,-oa_height/2]) screwpart();
+         mirror([1, 0, 0]) {
+            translate([(oa_width/2)-5,0,-oa_height/2]) screwpart();
+         }
+         
       }
-   }
+      union(){
+      translate([-(oa_width/2)+5,0,-5]) cylinder(d=3.6,h=30,center=true);
+      translate([-(oa_width/2)+5,0,-16]) cylinder(d=7,h=10,center=true);
+      translate([-(oa_width/2)+5,0,-2]) cylinder(d=4.2,h=6,center=true);}
+mirror([1, 0, 0]) {
+   union(){
+      translate([-(oa_width/2)+5,0,-5]) cylinder(d=3.6,h=30,center=true);
+      translate([-(oa_width/2)+5,0,-16]) cylinder(d=7,h=10,center=true);
+      translate([-(oa_width/2)+5,0,-2]) cylinder(d=4.2,h=6,center=true);
+}
 
+      }
+      }
+      
+   }
+   
    module screwpart(){
       difference(){
          union(){
-            cylinder(d=6,h=40);
-            translate([0,-3,0]) cube([5,6,40]);
+            cylinder(d=8,h=40);
+            translate([0,-4,0]) cube([5,8,40]);
          }
             for(i=[0,oa_height])
-            translate([5,0,i])chamfer_mask_y(6,corner);
+            translate([5,0,i])chamfer_mask_y(8,corner);
          }
    }
    module standoff(){
@@ -168,9 +182,11 @@ use <BOSL/masks.scad>
       translate([0,-3,-(oa_height/2)+(so_h/2)+(oa_wallthick/2)]) bore();
 
       }
+      
    }
 
 //standoff();
 //lowerhalf();
-//translate([0,0,2]) upperhalf();
+translate([0,0,0]) upperhalf();
 //translate([0,-3,-17])mbc();
+//body_main();
