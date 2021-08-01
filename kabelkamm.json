@@ -1,0 +1,23 @@
+{
+    "parameterSets": {
+        "Standardwerte des Designs": {
+            "corner": "5",
+            "cutline": "5",
+            "front_angle": "8",
+            "front_low_H": "12",
+            "mbc_board_thick": "1.6",
+            "mbc_hole_dia": "3",
+            "mbc_hole_dist": "4",
+            "mbc_hole_space": "92",
+            "mbc_size": "100",
+            "mov": "0",
+            "oa_height": "40",
+            "oa_length": "120",
+            "oa_wallthick": "2.5",
+            "oa_width": "120",
+            "panel_t": "2",
+            "tolerancd": "0.2"
+        }
+    },
+    "fileFormatVersion": "1"
+}
