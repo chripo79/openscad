@@ -25,6 +25,6 @@ difference(){
 
 translate([-0,-20,2]){difference(){
     schale();
-    #translate([-0.1,45/2,0])cube([116,45.1/2,128]);
+    translate([-0.1,45/2,0])cube([116,45.1/2,128]);
 
 }}
