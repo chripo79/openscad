@@ -5,17 +5,22 @@
 */
 include <BOSL/constants.scad>
 use <BOSL/masks.scad>
+include <mbc-sbc.scad>
 
 //##definitions##
 //divese
   mov=0;
   tolerance=0.2;
 //mbc related
-   mbc_size = 100;
-   mbc_board_thick = 1.6;
+   //mbc_size = 100;
+   //mbc_board_thick = 1.6;
    mbc_hole_dist = 4;
    mbc_hole_space = 92;
    mbc_hole_dia=3;
+   led_dist =47.7;
+   led_space=9;
+   btn_dist =17;
+   btn_spave=18;
 
 //case related
    oa_width = 120;
@@ -71,7 +76,7 @@ use <BOSL/masks.scad>
          translate([0,i,0])
          difference(){
                   resize([oa_width-(2*oa_wallthick),panel_t,oa_height-(2*(oa_wallthick-1)),flange_b])fwpanel();
-                  resize([oa_width-(2*oa_wallthick)-flange_t+0.2,panel_t,oa_height-(2*(oa_wallthick-1))-flange_t,2.5*panel_t]) fwpanel();
+                  translate([0.2,0,0]) resize([oa_width-(2*oa_wallthick)-flange_t,panel_t+0.4,oa_height-(2*(oa_wallthick-1))-flange_t,2.5*panel_t]) fwpanel();
          }
 
   }
@@ -93,40 +98,40 @@ use <BOSL/masks.scad>
 
    module body_main(){
       difference(){
-      union(){
-         difference(){
+         union(){
             difference(){
-               body_shape();
-               resize([oa_width-(2*oa_wallthick),oa_length+0.1,oa_height-(2*(oa_wallthick-1))]) body_shape();
+               difference(){
+                  body_shape();
+                  resize([oa_width-(2*oa_wallthick),oa_length+0.1,oa_height-(2*(oa_wallthick-1))]) body_shape();
+               }
+               translate([-((oa_width/2)+0.05),(oa_length/2),-(oa_height/2)+front_low_H]) rotate([front_angle,0,0]) cube([oa_width+0.1,oa_height+20,50]);
             }
-            translate([-((oa_width/2)+0.05),(oa_length/2),-(oa_height/2)+front_low_H]) rotate([front_angle,0,0]) cube([oa_width+0.1,oa_height+20,50]);
-         }
-         for(i=[0,108]){
-            translate([0,i,0])
-            translate([0,-(oa_length/2)+panel_t+((flange_b+tolerance)/2),0])panelflange();
-         }
-         translate([(oa_width/2)-5,0,-oa_height/2]) screwpart();
-         mirror([1, 0, 0]) {
+            for(i=[0,108]){
+               translate([0,i,0])
+               translate([0,-(oa_length/2)+panel_t+((flange_b+tolerance)/2),0])panelflange();
+            }
             translate([(oa_width/2)-5,0,-oa_height/2]) screwpart();
+            mirror([1, 0, 0]) {
+               translate([(oa_width/2)-5,0,-oa_height/2]) screwpart();
+            }
+            
          }
-         
+         union(){
+            translate([-(oa_width/2)+5,0,-5]) cylinder(d=3.6,h=30,center=true);
+            translate([-(oa_width/2)+5,0,-16]) cylinder(d=7,h=10,center=true);
+            translate([-(oa_width/2)+5,0,-2]) cylinder(d=4.2,h=6,center=true);
+         }
+         mirror([1, 0, 0]) {
+            union(){
+               translate([-(oa_width/2)+5,0,-5]) cylinder(d=3.6,h=30,center=true);
+               translate([-(oa_width/2)+5,0,-16]) cylinder(d=7,h=10,center=true);
+               translate([-(oa_width/2)+5,0,-2]) cylinder(d=4.2,h=6,center=true);
+            }
+         }
       }
-      union(){
-      translate([-(oa_width/2)+5,0,-5]) cylinder(d=3.6,h=30,center=true);
-      translate([-(oa_width/2)+5,0,-16]) cylinder(d=7,h=10,center=true);
-      translate([-(oa_width/2)+5,0,-2]) cylinder(d=4.2,h=6,center=true);}
-mirror([1, 0, 0]) {
-   union(){
-      translate([-(oa_width/2)+5,0,-5]) cylinder(d=3.6,h=30,center=true);
-      translate([-(oa_width/2)+5,0,-16]) cylinder(d=7,h=10,center=true);
-      translate([-(oa_width/2)+5,0,-2]) cylinder(d=4.2,h=6,center=true);
-}
 
-      }
-      }
-      
    }
-   
+
    module screwpart(){
       difference(){
          union(){
@@ -154,10 +159,10 @@ mirror([1, 0, 0]) {
 // Parts
    module upperhalf(){
       difference(){
-            union(){
-               split(0,cutline) body_main();
-               translate([0,0,-cutline-(lap_H/2)+tolerance]) overlap(0,5);
-            }
+         union(){
+            split(0,cutline) body_main();
+            translate([0,0,-cutline-(lap_H/2)+tolerance]) overlap(0,5);
+         }
          translate([-((oa_width/2)+0.05),(oa_length/2),-(oa_height/2)+front_low_H])
             rotate([front_angle,0,0])
                cube([oa_width+0.1,oa_height+20,50]);
@@ -179,14 +184,20 @@ mirror([1, 0, 0]) {
             }
             translate([0,-3,-(oa_height/2)+(so_h/2)+(oa_wallthick/2)]) standoff();
          }
-      translate([0,-3,-(oa_height/2)+(so_h/2)+(oa_wallthick/2)]) bore();
-
+         translate([0,-3,-(oa_height/2)+(so_h/2)+(oa_wallthick/2)]) bore();
       }
-      
+   }
+
+   module frontpanel(){
+      lit_w = 5.5;
+      lit_h = 8;
+      fwpanel();
+
    }
 
 //standoff();
-//lowerhalf();
-translate([0,0,0]) upperhalf();
-//translate([0,-3,-17])mbc();
+lowerhalf();
+//translate([0,0,0]) upperhalf();
+rotate([0,0,180])translate([-50,-47,-14.5])mbc();
+translate([0,50.9,0]) color("darkblue") frontpanel();
 //body_main();
