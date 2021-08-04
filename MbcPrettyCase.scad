@@ -191,12 +191,12 @@ include <mbc-sbc.scad>
 module legend(){
    linear_extrude(height=0.15){
          //logo
-         translate([-53,8,0])  text("Z80 MBC2",font="Cousine:style=Bold",size=4);
+         translate([-53,8,0])  text("Z80 MBC2",font="Rockwell:style=Bold",size=4);
          //switchwe
-         translate([-18.2,-10,0]) rotate(90) text("Reset",font="Cousine:style=Bold",size=3);
-         translate([-18.2-18,-10,0]) rotate(90) text("User",font="Cousine:style=Bold",size=3);
+         translate([-18.2,-10,0]) rotate(90) text("RESET",font="Cousine:style=Bold",size=3);
+         translate([-18.2-18,-10,0]) rotate(90) text("USER",font="Cousine:style=Bold",size=3);
          //lights
-         translate([-2.5,-1,0]) rotate(45) text("User",font="Cousine:style=Bold",size=3);
+         translate([-2.5,-1,0]) rotate(45) text("USER",font="Cousine:style=Bold",size=3);
          translate([-2.5+9,-1,0]) rotate(45) text("IOS",font="Cousine:style=Bold",size=3);
          translate([-2.5+18,-1,0]) rotate(45) text("HALT",font="Cousine:style=Bold",size=3);
          translate([-2.5+27,-1,0]) rotate(45) text("DMA",font="Cousine:style=Bold",size=3);
