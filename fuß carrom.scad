@@ -1,6 +1,6 @@
         /*-------------------------------------------
          |                                          |
-         |     Fuz zm verstauen carromm Brett       |
+         |     Fuss zm Verstauen carromm Brett       |
          |     Design : C. Pohl                     |
          |                                          |
          -------------------------------------------- */
