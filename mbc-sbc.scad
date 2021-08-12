@@ -36,5 +36,16 @@ module mbc() {
    }
 }
 
+   module sdcard() {
+
+   difference(){
+      cube([42,23.55,1.7]);
+      linear_extrude(height=2){translate([0,7.3+10.5,0]) rotate([0,0,270]) polygon(points=[[0,0],[10.5,0],[8,1.4],[2,1.4]]);}
+   }
+   translate([-0.3,7,1.7]) cube([16.2,11,2.2]);
+   translate([37.3,4,1.7]) cube([9,15,4]);
+}
+
+//sdcard();
 //mbc();
 //button();

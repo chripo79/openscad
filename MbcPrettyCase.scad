@@ -60,6 +60,12 @@ lap_H=2.5;
 //flanschweite(Höhe)
    flange_t = 2.5;
 /*[Einbausteher]*/
+// Steher Muster
+   so_patterm = [[0,0,0],[0,92,0],[92,0,0],[92,92,0]];//
+// Steher X Offset
+   so_xoff = 98;
+// Steher Y Offset
+   so_yoff =98;
 //Steher Höhe
    so_h = 3;
 //Steher D Außen
@@ -189,10 +195,10 @@ screwdist=3+(scr_recesDM/2);
    }
    module standoff(){
       $fn=32;
-      translate([-mbc_hole_space/2,-mbc_hole_space/2,0])
-      for(i=[0,mbc_hole_space])
-         for (j=[0,mbc_hole_space])
-            translate([i,j,0])
+      translate([-so_xoff/2,-so_yoff/2,0])
+      for(i=[0:len(so_patterm)-1])
+         //for (j=[0,mbc_hole_space])
+            translate(so_patterm[i])
                difference(){
                   cylinder(h=so_h,d=so_d,center=true);
                   cylinder( d=so_id, h=so_h, center=true);
@@ -215,10 +221,10 @@ screwdist=3+(scr_recesDM/2);
       }
    }
    module bore(){
-      translate([-mbc_hole_space/2,-mbc_hole_space/2,0])
-      for(i=[0,mbc_hole_space])
-         for (j=[0,mbc_hole_space])
-            translate([i,j,0]) cylinder( d=so_id, h=so_h+6, center=true);
+      translate([-so_xoff/2,-so_yoff/2,0])
+      for(i=[0:len(so_patterm)-1])
+         //for (j=[0,mbc_hole_space])
+            #translate(so_patterm[i]) cylinder( d=so_id, h=so_h+6, center=true);
    }
    module lowerhalf(){
       difference(){
@@ -232,6 +238,7 @@ screwdist=3+(scr_recesDM/2);
          translate([0,-3,-(oa_height/2)+(so_h/2)+(oa_wallthick/2)]) bore();
       }
    }
+// beschrifungen, extras
 module legend(){
    linear_extrude(height=0.15){
          //logo
@@ -263,10 +270,10 @@ module legend(){
          fwpanel();
          // indicator lights
          for(i=[0:1:4])
-            translate([init_led-(led_space*i),-(panel_t/2)-0.1,-15]) cube([lit_w,panel_t+0.2,lit_h]);
+            translate([init_led-15-(led_space*i),-(panel_t/2)-0.1,-15]) cube([lit_w,panel_t+0.2,lit_h]);
          // switches
          for(i=[0:1:1])
-            translate([init_sw-(btn_space*i),0,-9.5]) cuboid([sw_w,panel_t+8,sw_h],chamfer=2);
+            translate([init_sw-15-(btn_space*i),0,-9.5]) cuboid([sw_w,panel_t+8,sw_h],chamfer=2);
          //#translate([0,0.8,0]) rotate([90,0,180]) legend();
       }
    }
@@ -290,15 +297,16 @@ module legend(){
 if (assy == true) {
 
    lowerhalf();
-   upperhalf();
-   rotate([0,0,180])translate([-50,-47,-19.5]) color("lightblue") mbc();
+   //upperhalf();
+   rotate([0,0,180])translate([-35,-47,-19.5]) color("lightblue") mbc();
    translate([0,50.9,0]) color("darkblue") frontpanel();
    translate([0,-56.9,0]) color("darkblue") backpanel();
-   translate ([33,41,-8]) {
+   translate([5, 35, -15])   sdcard();
+   translate ([33-15,41,-8]) {
       swlever();
       translate([0,-3,0]) rotate([-90,0,0])cylinder(d=3,h=20,$fn=64);
    }
-   translate ([33-18,41,-8]) {
+   translate ([33-15-18,41,-8]) {
       swlever();
       translate([0,-3,0]) rotate([-90,0,0])cylinder(d=3,h=20,$fn=64);
    }

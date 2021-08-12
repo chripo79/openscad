@@ -5,5 +5,5 @@ union(){
   cylinder(d=17,h=1);
 
 }
-cylinder(d=12,h=5);
+translate([0,0,1]) cylinder(d=13,h=4);
 }
