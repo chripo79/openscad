@@ -7,6 +7,7 @@ include <BOSL/constants.scad>
 use <BOSL/masks.scad>
 use <BOSL/shapes.scad>
 use <mbc-sbc.scad>
+use <sdcardholder.scad>
 $fn=20;
 //##definitions##
 /*[Anzeigen ]*/
@@ -63,9 +64,9 @@ lap_H=2.5;
 // Steher Muster
    so_patterm = [[0,0,0],[0,92,0],[92,0,0],[92,92,0]];//
 // Steher X Offset
-   so_xoff = 98;
+   so_xoff = 98+24;
 // Steher Y Offset
-   so_yoff =98;
+   so_yoff =98-6;
 //Steher Höhe
    so_h = 3;
 //Steher D Außen
@@ -89,6 +90,9 @@ scr_insT=6;
 /*[Hidden]*/
 screwdist=3+(scr_recesDM/2);
 //helper modules
+   module cyl(dia,hei,sides){
+      cylinder(d=dia/cos(180/sides),h=hei,$fn=sides,center=true);
+   }
    module split(side,delta){ //sel :  0 = upper half, 1 = lower half ; delta: moves cut towards -z
 
       if (side==0) {
@@ -146,9 +150,9 @@ screwdist=3+(scr_recesDM/2);
 
    module screwhole(){
       union(){
-            translate([0,0,0]) cylinder(d=scr_DM+00.6,h=oa_height-oa_wallthick-corner,center=true);
-            translate([0,0,-(oa_height/2)+(scr_recesT/2)]) cylinder(d=scr_recesDM,h=scr_recesT,center=true);
-            translate([0,0,-cutline+(scr_insT/2)]) cylinder(d=scr_insDm,h=scr_insT,center=true);
+            translate([0,0,0]) cyl(scr_DM+00.6,oa_height-oa_wallthick-corner,32);
+            translate([0,0,-(oa_height/2)+(scr_recesT/2)]) cyl(scr_recesDM,scr_recesT,32);
+            translate([0,0,-cutline+(scr_insT/2)]) cyl(scr_insDm,scr_insT,32);
       }
    }
 
@@ -200,8 +204,8 @@ screwdist=3+(scr_recesDM/2);
          //for (j=[0,mbc_hole_space])
             translate(so_patterm[i])
                difference(){
-                  cylinder(h=so_h,d=so_d,center=true);
-                  cylinder( d=so_id, h=so_h, center=true);
+                  cyl(so_d,so_h,16);
+                  cylinder(so_id, so_h, 32);
                }
    }
 // 0: upper
@@ -224,7 +228,7 @@ screwdist=3+(scr_recesDM/2);
       translate([-so_xoff/2,-so_yoff/2,0])
       for(i=[0:len(so_patterm)-1])
          //for (j=[0,mbc_hole_space])
-            #translate(so_patterm[i]) cylinder( d=so_id, h=so_h+6, center=true);
+            translate(so_patterm[i]) cyl(so_id, so_h+6, 32);
    }
    module lowerhalf(){
       difference(){
@@ -239,7 +243,7 @@ screwdist=3+(scr_recesDM/2);
       }
    }
 // beschrifungen, extras
-module legend(){
+   module legend(){
    linear_extrude(height=0.15){
          //logo
          translate([-53,8,0])  text("Z80 MBC2",font="Rockwell:style=Bold",size=4);
@@ -275,7 +279,14 @@ module legend(){
          for(i=[0:1:1])
             translate([init_sw-15-(btn_space*i),0,-9.5]) cuboid([sw_w,panel_t+8,sw_h],chamfer=2);
          //#translate([0,0.8,0]) rotate([90,0,180]) legend();
+         translate([49,-1.1,-14])rotate([90,0,-90])resize([2.2,0,0],auto=[true,false,false])sdcard_diff();
       }
+       translate([10,-12.9,-5]) rotate([0,90,0]) cyl(3.2,35,32);
+       for(i=[0,btn_space]){
+          translate([i,0,0]){
+       translate([4.5,-12.9,-5]) rotate([0,90,0]) cyl(10,4,32);
+       translate([-4.5,-12.9,-5]) rotate([0,90,0]) cyl(10,4,32);
+          }}
    }
  module backpanel(){
     fwpanel();
@@ -284,33 +295,36 @@ module legend(){
    module swlever(){
       difference(){
          hull(){
-            translate([0,0,0.5])rotate([0,90,0])cylinder(d=15,h=4,center=true);
-            translate([0,2,0.5])rotate([0,90,0])cylinder(d=10,h=4,center=true);
+            translate([0,0,0.5])rotate([0,90,0])cyl(15,4,16);
+            translate([0,2,0.5])rotate([0,90,0])cyl(10,4,16);
          }
-         translate([0,-3,0]) rotate([-90,0,0])cylinder(d=3.4,h=30,$fn=8);
-         translate([5,-4,3]) rotate([-90,0,90])cylinder(d=3.4,h=30,$fn=64);
+         translate([0,-3,0]) rotate([-90,0,0])cyl(3.2,30,8);
+         translate([5,-4,3]) rotate([-90,0,90])cyl(3.4,30,64);
       }
    }
 //translate([80,0,0])screwhole();
+//frontpanel();
+
 
 
 if (assy == true) {
 
-   lowerhalf();
-   //upperhalf();
+  lowerhalf();
+   upperhalf();
    rotate([0,0,180])translate([-35,-47,-19.5]) color("lightblue") mbc();
-   translate([0,50.9,0]) color("darkblue") frontpanel();
+  # translate([0,50.9,0]) color("darkblue") frontpanel();
    translate([0,-56.9,0]) color("darkblue") backpanel();
-   translate([5, 35, -15])   sdcard();
-   translate ([33-15,41,-8]) {
+   translate([1.7+50, 35, -15]) rotate([90,0,-90])  sdcard();
+   #translate ([33-15,41,-8]) {
       swlever();
       translate([0,-3,0]) rotate([-90,0,0])cylinder(d=3,h=20,$fn=64);
    }
-   translate ([33-15-18,41,-8]) {
+  
+  # translate ([33-15-18,41,-8]) {
       swlever();
       translate([0,-3,0]) rotate([-90,0,0])cylinder(d=3,h=20,$fn=64);
-   }
-}
+   }}
+
 
 if(part=="unten") lowerhalf();
 if(part=="oben") upperhalf();
