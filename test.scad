@@ -1,5 +1,5 @@
-
-module base(size,num){
+use <MbcPrettyCase.scad>
+/* module base(size,num){
    difference(){
       union(){
          for(i=[-num:1:num]){
@@ -27,10 +27,10 @@ hull(){
    }
    translate([0,0,height+1]) cylinder(d1=size,d2=wtip,h=ltip,$fn=sides);
 }
-/* 
+
 translate([0,0,8])crystal(12,15,5,43,4,0.5);
 translate([-10,-10,0])base(20,3);
- */
+
 module facets_faces(){
    r_corner =1; // =height/2
    sqare=10;//real width/lenght=square+rcorner
@@ -42,4 +42,8 @@ module facets_faces(){
 translate([5,5,0]) facets_faces();
 rotate([0,45,0])
 rotate([90,0,0])
-   cube([10,10,100],center=true);
+   cube([10,10,100],center=true); */
+
+
+//frontpanel();
+legend();

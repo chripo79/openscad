@@ -7,7 +7,7 @@ include <BOSL/constants.scad>
 use <BOSL/masks.scad>
 use <BOSL/shapes.scad>
 use <mbc-sbc.scad>
-use <sdcardholder.scad>
+use <partholders.scad>
 $fn=20;
 //##definitions##
 /*[Anzeigen ]*/
@@ -244,12 +244,12 @@ screwdist=3+(scr_recesDM/2);
    }
 // beschrifungen, extras
    module legend(){
-   linear_extrude(height=0.15){
+   linear_extrude(height=0.4){
          //logo
-         translate([-53,8,0])  text("Z80 MBC2",font="Rockwell:style=Bold",size=4);
+         translate([-35,16,0])  text("Z80 MBC2",font="Rockwell:style=Bold",size=6);
          //switchwe
-         translate([-18.2,-10,0]) rotate(90) text("RESET",font="Cousine:style=Bold",size=3);
-         translate([-18.2-18,-10,0]) rotate(90) text("USER",font="Cousine:style=Bold",size=3);
+         translate([-18.2-18,-14,0]) rotate(90) text("RESET",font="Cousine:style=Bold",size=3);
+         translate([-18.2,-14,0]) rotate(90) text("USER",font="Cousine:style=Bold",size=3);
          //lights
          translate([-2.5,-1,0]) rotate(45) text("USER",font="Cousine:style=Bold",size=3);
          translate([-2.5+9,-1,0]) rotate(45) text("IOS",font="Cousine:style=Bold",size=3);
@@ -259,6 +259,24 @@ screwdist=3+(scr_recesDM/2);
 
    //translate([105,0,8]) text("Z80 MBC2",font="Cousine:style=Bold",size=4);
    }
+   }
+   module schalterhalter(){
+      difference(){
+            for(i=[0,btn_space]){
+               translate([i,0,0]){
+                  union(){
+                     translate([4.5,-12.9/2,-5])cube([4,12.9,10],center=true);
+                     translate([4.5,-12.9,-5]) rotate([0,90,0]) cyl(10,4,32);
+                  }
+
+                  union(){
+                     translate([-4.5,-12.9/2,-5])cube([4,12.9,10],center=true);
+                     translate([-4.5,-12.9,-5]) rotate([0,90,0]) cyl(10,4,32); 
+                  }
+               }
+            }
+            translate([10,-12.9,-5]) rotate([0,90,0]) cyl(3.2,35,32);
+         }
    }
 
    module frontpanel(){
@@ -270,23 +288,23 @@ screwdist=3+(scr_recesDM/2);
       init_led = (mbc_size/2)-led_dist-(lit_w/2);
       init_sw = (mbc_size/2)-btn_dist;
 
-      difference(){
-         fwpanel();
-         // indicator lights
-         for(i=[0:1:4])
-            translate([init_led-15-(led_space*i),-(panel_t/2)-0.1,-15]) cube([lit_w,panel_t+0.2,lit_h]);
-         // switches
-         for(i=[0:1:1])
-            translate([init_sw-15-(btn_space*i),0,-9.5]) cuboid([sw_w,panel_t+8,sw_h],chamfer=2);
-         //#translate([0,0.8,0]) rotate([90,0,180]) legend();
-         translate([49,-1.1,-14])rotate([90,0,-90])resize([2.2,0,0],auto=[true,false,false])sdcard_diff();
+      union(){
+         difference(){
+            fwpanel();
+            // indicator lights
+            for(i=[0:1:4])
+               translate([init_led-15-(led_space*i),-(panel_t/2)-0.1,-15]) cube([lit_w,panel_t+0.2,lit_h]);
+            // switches
+            for(i=[0:1:1]){
+               translate([20-(btn_space*i),0,-0]) rotate([90,0,0]) cyl(6.6,6,10);
+               translate([20-(btn_space*i),-1,-6.4]) rotate([90,0,0]) cyl(2.6,6,1);}
+            #
+            translate([54,-1.1,-14])rotate([90,0,-90])resize([2.2,0,0],auto=[true,false,false])sdcard_diff();
+         }
+         translate([-15,0.9,-3]) rotate([90,0,180]) legend();
+         //schalterhalter();
       }
-       translate([10,-12.9,-5]) rotate([0,90,0]) cyl(3.2,35,32);
-       for(i=[0,btn_space]){
-          translate([i,0,0]){
-       translate([4.5,-12.9,-5]) rotate([0,90,0]) cyl(10,4,32);
-       translate([-4.5,-12.9,-5]) rotate([0,90,0]) cyl(10,4,32);
-          }}
+
    }
  module backpanel(){
     fwpanel();
@@ -299,7 +317,7 @@ screwdist=3+(scr_recesDM/2);
             translate([0,2,0.5])rotate([0,90,0])cyl(10,4,16);
          }
          translate([0,-3,0]) rotate([-90,0,0])cyl(3.2,30,8);
-         translate([5,-4,3]) rotate([-90,0,90])cyl(3.4,30,64);
+         translate([5,-3,3]) rotate([-90,0,90])cyl(3.4,30,64);
       }
    }
 //translate([80,0,0])screwhole();
@@ -310,17 +328,17 @@ screwdist=3+(scr_recesDM/2);
 if (assy == true) {
 
   lowerhalf();
-   upperhalf();
+   //upperhalf();
    rotate([0,0,180])translate([-35,-47,-19.5]) color("lightblue") mbc();
-  # translate([0,50.9,0]) color("darkblue") frontpanel();
+   translate([0,50.9,0]) color("darkblue") frontpanel();
    translate([0,-56.9,0]) color("darkblue") backpanel();
-   translate([1.7+50, 35, -15]) rotate([90,0,-90])  sdcard();
-   #translate ([33-15,41,-8]) {
+   //translate([1.7+50, 35, -15]) rotate([90,0,-90])  sdcard();
+   translate ([33-15,41,-8]) {
       swlever();
       translate([0,-3,0]) rotate([-90,0,0])cylinder(d=3,h=20,$fn=64);
    }
   
-  # translate ([33-15-18,41,-8]) {
+   translate ([33-15-18,41,-8]) {
       swlever();
       translate([0,-3,0]) rotate([-90,0,0])cylinder(d=3,h=20,$fn=64);
    }}

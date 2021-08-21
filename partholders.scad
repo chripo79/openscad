@@ -41,15 +41,39 @@ module sdcard_holder(){
     }
   }
 }
+module ftdi_holder(){
+  cardy=15.5;
+  cardx=25.6;
+  wall=4;
+  screwspace=7; 
+  flangethick=5;
 
+  difference(){
+    union(){
+      cube([cardx+3,cardy+(2*wall),9]);
+      translate([0,-screwspace,0]) cube([flangethick,cardy+(2*wall)+(2*screwspace),9]);
+      
+    }
+
+    translate([-0.02,wall,2])cube([cardx,cardy,9]);
+    translate([0,wall,7.2]) cube([cardx+2*wall+0.1,cardy,3.4]);
+    }
+  translate([9.5,wall,2]) cube([cardx-9.5,cardy,2.5]);
+    }
+   
+  
+
+
+sdcard_holder();
 
 module sdcard_diff(){
   intersection(){
     translate([-2,-7,0])cube([2,42,9]);
     union(){
       for(i=[-3.5,31.5]) translate([0,i,4]) rotate([0,90,0]) cyl(3.6,11,32);
-      translate([-2,14.5,-1]) resize([10,14,10]) cylinder(d=12,h=10,$fn=32);
+      translate([-2,15.4,-1]) resize([10,14,10]) cylinder(d=12,h=10,$fn=32);
     }
   }
 }
 
+sdcard_diff();
