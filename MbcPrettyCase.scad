@@ -208,6 +208,26 @@ screwdist=3+(scr_recesDM/2);
                   cylinder(so_id, so_h, 32);
                }
    }
+   module senkloch(th,l,sd,ed){ //th: durchgangsbohrung, bohngstiefe ,sd: enkdurchmesser, ed:extratiefe
+      $fn=64;
+      union(){
+         cylinder(d=th,h=l);
+         cylinder(d1=sd,d2=0,h=sd/2);
+         translate([0,0,-ed])cylinder(d=sd,h=ed);
+      }
+
+   }
+   module subDcutout(){
+      translate([-25/2,0,0]) 
+      for(i=[0,25]) translate([i,0,0]) senkloch(3.4,5,6.3,0.3);
+      translate([0,0,4])cube([18,9,10],center=true);
+   }
+
+module subDcutout(){
+  translate([-25/2,0,0]) 
+   for(i=[0,25]) translate([i,0,0]) senkloch(3.4,5,6.3,0.3);
+   translate([0,0,4])cube([18,9,10],center=true);
+}
 // 0: upper
 // 1: lower
 
@@ -224,12 +244,14 @@ screwdist=3+(scr_recesDM/2);
 
       }
    }
+
    module bore(){
       translate([-so_xoff/2,-so_yoff/2,0])
       for(i=[0:len(so_patterm)-1])
          //for (j=[0,mbc_hole_space])
             translate(so_patterm[i]) cyl(so_id, so_h+6, 32);
    }
+
    module lowerhalf(){
       difference(){
          union(){
@@ -242,6 +264,7 @@ screwdist=3+(scr_recesDM/2);
          translate([0,-3,-(oa_height/2)+(so_h/2)+(oa_wallthick/2)]) bore();
       }
    }
+
 // beschrifungen, extras
    module legend(){
    linear_extrude(height=0.4){
@@ -260,6 +283,7 @@ screwdist=3+(scr_recesDM/2);
    //translate([105,0,8]) text("Z80 MBC2",font="Cousine:style=Bold",size=4);
    }
    }
+
    module schalterhalter(){
       difference(){
             for(i=[0,btn_space]){
@@ -306,8 +330,18 @@ screwdist=3+(scr_recesDM/2);
       }
 
    }
- module backpanel(){
-    fwpanel();
+   module backpanel(){
+  
+      difference(){
+         union(){
+            fwpanel();
+            translate([50,-1.5,0])cube([12,1,30],center=true);
+         }
+         
+         translate([50,0.8,0])rotate([90,90,0]) subDcutout();
+         for(i=[0:18])
+            translate([25-(4*i),-2,-12]) cube([2,4,25]);
+      }
  }
 
    module swlever(){
@@ -331,7 +365,7 @@ if (assy == true) {
    //upperhalf();
    rotate([0,0,180])translate([-35,-47,-19.5]) color("lightblue") mbc();
    translate([0,50.9,0]) color("darkblue") frontpanel();
-   translate([0,-56.9,0]) color("darkblue") backpanel();
+   translate([0,-56.9,0]) rotate([-180,0,0]) color("darkblue") backpanel();
    //translate([1.7+50, 35, -15]) rotate([90,0,-90])  sdcard();
    translate ([33-15,41,-8]) {
       swlever();
