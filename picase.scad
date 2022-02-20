@@ -1,30 +1,19 @@
 
 module schale(){
-    difference(){
-        linear_extrude(height=120){
-            difference(){
-                polygon(points=[[5,0],[110,0],[115,10],[115,35],[110,45],[5,45],[0,35],[0,10]], paths=[[0,1,2,3,4,5,6,7]]);
-                offset(delta=-2){
-                    polygon(points=[[5,0],[110,0],[115,10],[115,35],[110,45],[5,45],[0,35],[0,10]], paths=[[0,1,2,3,4,5,6,7]]);
-                }
-            }
-        }
-
-
-        rotate([0,-90,0]) translate([0,0,-122]) linear_extrude(height=123){
-            polygon(points=[[-0.1,-0.01],[20.1,45.1],[-0.10,45.1]],paths=[[0,1,2]]);
+  
+    
+        difference(){
+            linear_extrude(height=130){
+            offset(delta=2){
+                polygon(points=[[6,0],[64,0],[70,6],[70,64],[64,70],[6,70],[0,64],[0,6]], paths=[[0,1,2,3,4,5,6,7]]);
+            }}
+            translate([0,0,-0.5]) linear_extrude(height=131){
+           polygon(points=[[6,0],[64,0],[70,6],[70,64],[64,70],[6,70],[0,64],[0,6]], paths=[[0,1,2,3,4,5,6,7]]);
         }
     }
 }
+rotate([90,0,0])
 difference(){
     schale();
-   
-   translate([-0.1,-0.10,0])cube([116,47/2,128]);
-
+    rotate([5,0,0])translate([-2.1,20,-22]) cube([75,71,20]);
 }
-
-translate([-0,-20,2]){difference(){
-    schale();
-    translate([-0.1,45/2,0])cube([116,45.1/2,128]);
-
-}}

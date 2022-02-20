@@ -1,9 +1,10 @@
 /*### Z80 MBC2 pretty case###
 # designed 2021 by C.PohlAAaaa     ∑
 # Creative commons##
-#uses the BOSL Library
+#uses the BOSL Library & NopSCADlib
 */
 include <BOSL/constants.scad>
+include <NopSCADlib/lib.scad>
 use <BOSL/masks.scad>
 use <BOSL/shapes.scad>
 $fn=20;
@@ -12,7 +13,7 @@ $fn=20;
 //Assembly anzeigen
 assy=true;
 //enizelteile
-part="kein";//[kein,unten,oben,frontpanel,schalter,backpanel]
+part="kein";//[kein,unten,oben,frontpanel,backpanel]
 //Detail
 /*[Hidden]*/
 
@@ -22,23 +23,15 @@ lap_W=1;
 lap_H=2.5;
 
 
-   mbc_size = 100;
-   //mbc_board_thick = 1.6;
-   mbc_hole_dist = 4;
-   mbc_hole_space = 92;
-   mbc_hole_dia=3;
-   led_dist =47.7;
-   led_space=9;
-   btn_dist =17;
-   btn_space=18;
+   
 
 
 //case related
 /*[Gehäuse ]*/
 // Gehäuse Breite
-   oa_width = 150;
+   oa_width = 160;
 //Gehäuse länge
-   oa_length = 120;
+   oa_length = 140;
 //Gehäuse Höhe
    oa_height =70;
 //eckenschräge
@@ -62,9 +55,9 @@ lap_H=2.5;
 // Steher Muster
    so_patterm = [[0,0,0],[0,49,0],[58,0,0],[58,49,0]];//
 // Steher X Offset
-   so_xoff = 50;
+   so_xoff = 70;
 // Steher Y Offset
-   so_yoff = 95;
+   so_yoff = 115;
 //Steher Höhe
    so_h = 3;
 //Steher D Außen
@@ -164,7 +157,7 @@ screwdist=3+(scr_recesDM/2);
                }
                translate([-((oa_width/2)+0.05),(oa_length/2),-(oa_height/2)+front_low_H]) rotate([front_angle,0,0]) cube([oa_width+0.1,oa_height+30,70]);
             }
-            for(i=[0,108]){
+            for(i=[0,128]){
                translate([0,i,0])
                translate([0,-(oa_length/2)+panel_t+((flange_b+tolerance)/2),0])panelflange();
             }
@@ -252,38 +245,20 @@ screwdist=3+(scr_recesDM/2);
       }
    }
 
-// beschrifungen, extras
-   
 
-   module schalterhalter(){
-      difference(){
-            for(i=[0,btn_space]){
-               translate([i,0,0]){
-                  union(){
-                     translate([4.5,-12.9/2,-5])cube([4,12.9,10],center=true);
-                     translate([4.5,-12.9,-5]) rotate([0,90,0]) cyl(10,4,32);
-                  }
 
-                  union(){
-                     translate([-4.5,-12.9/2,-5])cube([4,12.9,10],center=true);
-                     translate([-4.5,-12.9,-5]) rotate([0,90,0]) cyl(10,4,32); 
-                  }
-               }
-            }
-            translate([10,-12.9,-5]) rotate([0,90,0]) cyl(3.2,35,32);
-         }
-   }
+
+
+
 
    module frontpanel(){
 
-      
 
       union(){
          difference(){
             fwpanel();
-           
          }
-      
+
       }
 
    }
@@ -291,7 +266,6 @@ screwdist=3+(scr_recesDM/2);
 
       difference(){
             fwpanel();
-   
       }
    }
 
@@ -301,13 +275,15 @@ screwdist=3+(scr_recesDM/2);
 if (assy == true) {
 
   lowerhalf();
-  //upperhalf();
-   //translate([0,50.9,0]) color("darkblue") frontpanel();
-   translate([0,-56.9,0]) rotate([-180,0,0]) color("darkblue") backpanel();
-   //translate([1.7+50, 35, -15]) rotate([90,0,-90])  sdcard();
-   }
+  
+//  upperhalf();
+ 
+  translate([0,60.9,0]) color("darkblue") frontpanel();
+  translate([0,-66.9,0]) rotate([-180,0,0]) color("darkblue") backpanel();
+}
 
-
+translate([4,-36,-14.5]) pcb(RPI4);
+translate([0,-25,21]) rotate([0,0,0])fan(fan60x25);
 
 if(part=="unten") lowerhalf();
 if(part=="oben") upperhalf();

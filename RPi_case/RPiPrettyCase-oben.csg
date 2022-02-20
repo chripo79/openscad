@@ -1,0 +1,2050 @@
+group() {
+	group() {
+		difference() {
+			union() {
+				group() {
+					group() {
+						difference() {
+							group() {
+								group() {
+									difference() {
+										union() {
+											difference() {
+												difference() {
+													group() {
+														difference() {
+															cube(size = [160, 140, 70], center = true);
+															group() {
+																group() {
+																	multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																		group() {
+																			group() {
+																				group() {
+																					group() {
+																						group() {
+																							group() {
+																								group() {
+																									group() {
+																										group() {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																			group() {
+																																				cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																	multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																		group() {
+																			group() {
+																				group() {
+																					group() {
+																						group() {
+																							group() {
+																								group() {
+																									group() {
+																										group() {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																			group() {
+																																				cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+																group() {
+																	multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																		group() {
+																			group() {
+																				group() {
+																					group() {
+																						group() {
+																							group() {
+																								group() {
+																									group() {
+																										group() {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																			group() {
+																																				cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																	multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																		group() {
+																			group() {
+																				group() {
+																					group() {
+																						group() {
+																							group() {
+																								group() {
+																									group() {
+																										group() {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																			group() {
+																																				cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+													resize(newsize = [155,140.1,67], auto = [0,0,0], convexity = 0) {
+														group() {
+															difference() {
+																cube(size = [160, 140, 70], center = true);
+																group() {
+																	group() {
+																		multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																			group() {
+																				group() {
+																					group() {
+																						group() {
+																							group() {
+																								group() {
+																									group() {
+																										group() {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																				group() {
+																																					cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																		multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																			group() {
+																				group() {
+																					group() {
+																						group() {
+																							group() {
+																								group() {
+																									group() {
+																										group() {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																				group() {
+																																					cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																	group() {
+																		multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																			group() {
+																				group() {
+																					group() {
+																						group() {
+																							group() {
+																								group() {
+																									group() {
+																										group() {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																				group() {
+																																					cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																		multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																			group() {
+																				group() {
+																					group() {
+																						group() {
+																							group() {
+																								group() {
+																									group() {
+																										group() {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																				group() {
+																																					cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+												multmatrix([[1, 0, 0, -80.05], [0, 1, 0, 70], [0, 0, 1, -15], [0, 0, 0, 1]]) {
+													multmatrix([[1, 0, 0, 0], [0, 0.996195, -0.0871557, 0], [0, 0.0871557, 0.996195, 0], [0, 0, 0, 1]]) {
+														cube(size = [160.1, 100, 70], center = false);
+													}
+												}
+											}
+											group() {
+												multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+													multmatrix([[1, 0, 0, 0], [0, 1, 0, -66.9], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+														group() {
+															multmatrix([[1, 0, 0, 0], [0, 1, 0, -2.1], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																group() {
+																	multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																		difference() {
+																			resize(newsize = [155,2,67], auto = [0,0,0], convexity = 0) {
+																				group() {
+																					resize(newsize = [154.8,2,66.8], auto = [0,0,0], convexity = 0) {
+																						group() {
+																							difference() {
+																								cube(size = [160, 140, 70], center = true);
+																								group() {
+																									group() {
+																										multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																										multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																									group() {
+																										multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																										multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																			multmatrix([[1, 0, 0, 0.2], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																				resize(newsize = [152.5,2.4,64.5], auto = [0,0,0], convexity = 0) {
+																					group() {
+																						resize(newsize = [154.8,2,66.8], auto = [0,0,0], convexity = 0) {
+																							group() {
+																								difference() {
+																									cube(size = [160, 140, 70], center = true);
+																									group() {
+																										group() {
+																											multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																											multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																										group() {
+																											multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																											multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																	multmatrix([[1, 0, 0, 0], [0, 1, 0, 4.2], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																		difference() {
+																			resize(newsize = [155,2,67], auto = [0,0,0], convexity = 0) {
+																				group() {
+																					resize(newsize = [154.8,2,66.8], auto = [0,0,0], convexity = 0) {
+																						group() {
+																							difference() {
+																								cube(size = [160, 140, 70], center = true);
+																								group() {
+																									group() {
+																										multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																										multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																									group() {
+																										multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																										multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																			multmatrix([[1, 0, 0, 0.2], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																				resize(newsize = [152.5,2.4,64.5], auto = [0,0,0], convexity = 0) {
+																					group() {
+																						resize(newsize = [154.8,2,66.8], auto = [0,0,0], convexity = 0) {
+																							group() {
+																								difference() {
+																									cube(size = [160, 140, 70], center = true);
+																									group() {
+																										group() {
+																											multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																											multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																										group() {
+																											multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																											multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+												multmatrix([[1, 0, 0, 0], [0, 1, 0, 128], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+													multmatrix([[1, 0, 0, 0], [0, 1, 0, -66.9], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+														group() {
+															multmatrix([[1, 0, 0, 0], [0, 1, 0, -2.1], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																group() {
+																	multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																		difference() {
+																			resize(newsize = [155,2,67], auto = [0,0,0], convexity = 0) {
+																				group() {
+																					resize(newsize = [154.8,2,66.8], auto = [0,0,0], convexity = 0) {
+																						group() {
+																							difference() {
+																								cube(size = [160, 140, 70], center = true);
+																								group() {
+																									group() {
+																										multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																										multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																									group() {
+																										multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																										multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																			multmatrix([[1, 0, 0, 0.2], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																				resize(newsize = [152.5,2.4,64.5], auto = [0,0,0], convexity = 0) {
+																					group() {
+																						resize(newsize = [154.8,2,66.8], auto = [0,0,0], convexity = 0) {
+																							group() {
+																								difference() {
+																									cube(size = [160, 140, 70], center = true);
+																									group() {
+																										group() {
+																											multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																											multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																										group() {
+																											multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																											multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																	multmatrix([[1, 0, 0, 0], [0, 1, 0, 4.2], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																		difference() {
+																			resize(newsize = [155,2,67], auto = [0,0,0], convexity = 0) {
+																				group() {
+																					resize(newsize = [154.8,2,66.8], auto = [0,0,0], convexity = 0) {
+																						group() {
+																							difference() {
+																								cube(size = [160, 140, 70], center = true);
+																								group() {
+																									group() {
+																										multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																										multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																									group() {
+																										multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																										multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																												group() {
+																																													cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																			multmatrix([[1, 0, 0, 0.2], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																				resize(newsize = [152.5,2.4,64.5], auto = [0,0,0], convexity = 0) {
+																					group() {
+																						resize(newsize = [154.8,2,66.8], auto = [0,0,0], convexity = 0) {
+																							group() {
+																								difference() {
+																									cube(size = [160, 140, 70], center = true);
+																									group() {
+																										group() {
+																											multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																											multmatrix([[1, 0, 0, -80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																										group() {
+																											multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																											multmatrix([[1, 0, 0, 80], [0, 1, 0, 0], [0, 0, 1, 35], [0, 0, 0, 1]]) {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	group() {
+																																		group() {
+																																			group() {
+																																				group() {
+																																					group() {
+																																						group() {
+																																							group() {
+																																								group() {
+																																									group() {
+																																										group() {
+																																											group() {
+																																												multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																													group() {
+																																														cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 140.1, r1 = 5, r2 = 5, center = true);
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
+																																							}
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+											multmatrix([[1, 0, 0, 73.5], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+												group() {
+													difference() {
+														union() {
+															cylinder($fn = 20, $fa = 6, $fs = 0.25, h = 70, r1 = 5, r2 = 5, center = false);
+															multmatrix([[1, 0, 0, 0], [0, 1, 0, -5], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																cube(size = [5, 10, 70], center = false);
+															}
+														}
+														group() {
+															multmatrix([[1, 0, 0, 5], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																group() {
+																	group() {
+																		group() {
+																			group() {
+																				group() {
+																					group() {
+																						group() {
+																							group() {
+																								group() {
+																									group() {
+																										group() {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																	group() {
+																																		cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 10.1, r1 = 5, r2 = 5, center = true);
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+															multmatrix([[1, 0, 0, 5], [0, 1, 0, 0], [0, 0, 1, 70], [0, 0, 0, 1]]) {
+																group() {
+																	group() {
+																		group() {
+																			group() {
+																				group() {
+																					group() {
+																						group() {
+																							group() {
+																								group() {
+																									group() {
+																										group() {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																	group() {
+																																		cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 10.1, r1 = 5, r2 = 5, center = true);
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+											multmatrix([[-1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+												multmatrix([[1, 0, 0, 73.5], [0, 1, 0, 0], [0, 0, 1, -35], [0, 0, 0, 1]]) {
+													group() {
+														difference() {
+															union() {
+																cylinder($fn = 20, $fa = 6, $fs = 0.25, h = 70, r1 = 5, r2 = 5, center = false);
+																multmatrix([[1, 0, 0, 0], [0, 1, 0, -5], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																	cube(size = [5, 10, 70], center = false);
+																}
+															}
+															group() {
+																multmatrix([[1, 0, 0, 5], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+																	group() {
+																		group() {
+																			group() {
+																				group() {
+																					group() {
+																						group() {
+																							group() {
+																								group() {
+																									group() {
+																										group() {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																		group() {
+																																			cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 10.1, r1 = 5, r2 = 5, center = true);
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+																multmatrix([[1, 0, 0, 5], [0, 1, 0, 0], [0, 0, 1, 70], [0, 0, 0, 1]]) {
+																	group() {
+																		group() {
+																			group() {
+																				group() {
+																					group() {
+																						group() {
+																							group() {
+																								group() {
+																									group() {
+																										group() {
+																											group() {
+																												group() {
+																													group() {
+																														group() {
+																															group() {
+																																group() {
+																																	multmatrix([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]) {
+																																		group() {
+																																			cylinder($fn = 4, $fa = 6, $fs = 0.25, h = 10.1, r1 = 5, r2 = 5, center = true);
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+										multmatrix([[1, 0, 0, 73.5], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+											group() {
+												union() {
+													multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+														group() {
+															cylinder($fn = 32, $fa = 6, $fs = 0.25, h = 62.5, r1 = 1.80871, r2 = 1.80871, center = true);
+														}
+													}
+													multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -30], [0, 0, 0, 1]]) {
+														group() {
+															cylinder($fn = 32, $fa = 6, $fs = 0.25, h = 10, r1 = 3.51694, r2 = 3.51694, center = true);
+														}
+													}
+													multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -2], [0, 0, 0, 1]]) {
+														group() {
+															cylinder($fn = 32, $fa = 6, $fs = 0.25, h = 6, r1 = 2.11016, r2 = 2.11016, center = true);
+														}
+													}
+												}
+											}
+										}
+										multmatrix([[-1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+											multmatrix([[1, 0, 0, 73.5], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+												group() {
+													union() {
+														multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+															group() {
+																cylinder($fn = 32, $fa = 6, $fs = 0.25, h = 62.5, r1 = 1.80871, r2 = 1.80871, center = true);
+															}
+														}
+														multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -30], [0, 0, 0, 1]]) {
+															group() {
+																cylinder($fn = 32, $fa = 6, $fs = 0.25, h = 10, r1 = 3.51694, r2 = 3.51694, center = true);
+															}
+														}
+														multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -2], [0, 0, 0, 1]]) {
+															group() {
+																cylinder($fn = 32, $fa = 6, $fs = 0.25, h = 6, r1 = 2.11016, r2 = 2.11016, center = true);
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -40], [0, 0, 0, 1]]) {
+								cube(size = [165, 145, 70], center = true);
+							}
+						}
+					}
+				}
+				multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, -6.05], [0, 0, 0, 1]]) {
+					group() {
+						group() {
+							group() {
+								multmatrix([[1, 0, 0, -79.5], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+									cube(size = [1, 130, 2.5], center = true);
+								}
+								multmatrix([[1, 0, 0, 79.5], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) {
+									cube(size = [1, 130, 2.5], center = true);
+								}
+							}
+						}
+					}
+				}
+			}
+			multmatrix([[1, 0, 0, -80.05], [0, 1, 0, 70], [0, 0, 1, -15], [0, 0, 0, 1]]) {
+				multmatrix([[1, 0, 0, 0], [0, 0.996195, -0.0871557, 0], [0, 0.0871557, 0.996195, 0], [0, 0, 0, 1]]) {
+					cube(size = [160.1, 90, 50], center = false);
+				}
+			}
+		}
+	}
+}
+
