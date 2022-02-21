@@ -5,6 +5,7 @@
 */
 include <BOSL/constants.scad>
 include <NopSCADlib/lib.scad>
+use <USB-HUB.scad>
 use <BOSL/masks.scad>
 use <BOSL/shapes.scad>
 $fn=20;
@@ -208,6 +209,19 @@ screwdist=3+(scr_recesDM/2);
       }
 
    }
+
+module fangrid(){
+  union(){
+   for(i=[0,60,120]){
+      rotate([0,0,i]) cube([66,2,1.5],center=true);
+   }
+   cylinder(d=24,h=1.5,center=true);
+   difference(){
+      cylinder(d=43,h=1.5,center=true);
+      translate([0,0,-0.25]) cylinder(d=39,h=3,center=true);
+   }
+  }
+}
 // 0: upper
 // 1: lower
 
@@ -254,41 +268,67 @@ screwdist=3+(scr_recesDM/2);
    module frontpanel(){
 
 
-      union(){
+      
          difference(){
             fwpanel();
+             translate([-69.4,9.2,-15]) rotate([0,0,0]) hub();
          }
 
-      }
+     
 
    }
    module backpanel(){
 
       difference(){
             fwpanel();
+           
       }
    }
 
-
+module upperhalf_ed(){
+   union(){
+      difference(){
+         union(){
+            upperhalf();
+            translate([0,-25,33.25])
+            difference(){
+               cube(size=[66, 66, 1], center=true);
+               translate([0,0,-0.1]) cylinder(d1=58,d2=58,h=1,center=true,$fn=64);
+            }
+            
+         }
+         translate([-25,-50,34]) for(i=[0,50]){
+            for(j=[0,50]){
+               translate([i,j,-1]) cylinder(d=3.5,h=5,center=true);
+               translate([i,j,-0.5]) cylinder(d1=3.4,d2=6.5,h=1.6);
+            }
+         }
+         translate([0,-25,34.6]) cylinder(d1=58,d2=64,h=2.5,center=true,$fn=64);
+      }
+      translate([0,-25,34.25]) fangrid();}
+}
 
 
 if (assy == true) {
 
-  lowerhalf();
+ lowerhalf();
   
-//  upperhalf();
+  //upperhalf_ed();
+  //fangrid();
  
   translate([0,60.9,0]) color("darkblue") frontpanel();
-  translate([0,-66.9,0]) rotate([-180,0,0]) color("darkblue") backpanel();
+  //translate([0,-66.9,0]) rotate([-180,0,0]) color("darkblue") backpanel();
 }
-
-translate([4,-36,-14.5]) pcb(RPI4);
-translate([0,-25,21]) rotate([0,0,0])fan(fan60x25);
+//frontpanel();
+//translate([4,-36,-14.5]) pcb(RPI4);
+//translate([0,-25,20]) rotate([0,0,0]) fan(fan60x25);
+translate([25,50.5,-15]) rotate([0,0,180]) hub();
 
 if(part=="unten") lowerhalf();
-if(part=="oben") upperhalf();
+if(part=="oben") upperhalf_ed();
 if(part=="frontpanel") frontpanel();
 if(part=="backpanel") backpanel();
+
 
 
 
