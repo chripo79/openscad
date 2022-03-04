@@ -97,7 +97,7 @@ difference(){
  translate([0,2,2])cube([40,22,12]);
 } */
 
- module frontpanel(){
+ /*module frontpanel(){
 
       
 
@@ -125,3 +125,7 @@ difference(){
          translate([-15,0.9,-3]) rotate([90,0,180]) legend();
          //schalterhalter();
       }
+      */
+   Pt_pol =[]
+   polygon(Pt_pol);
+   
