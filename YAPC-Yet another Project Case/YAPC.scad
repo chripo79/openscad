@@ -1,20 +1,20 @@
 /*### Z80 MBC2 pretty case###
 # designed 2021 by C.PohlAAaaa     ∑
 # Creative commons##
-#uses the BOSL Library & NopSCADlib
+#uses the BOSL Library
 */
 include <BOSL/constants.scad>
-include <NopSCADlib/lib.scad>
-use <USB-HUB.scad>
 use <BOSL/masks.scad>
 use <BOSL/shapes.scad>
+use <mbc-sbc.scad>
+use <partholders.scad>
 $fn=20;
 //##definitions##
-/*[Anzeigen ]*/
-//Assembly anzeigen
-assy=true;
+/*[SEE What ]*/
+//Show
+assembly=true;
 //enizelteile
-part="kein";//[kein,unten,oben,frontpanel,backpanel]
+part="nothing";//[nothing,lower,upper,frontpanel,backpanel]
 //Detail
 /*[Hidden]*/
 
@@ -24,57 +24,54 @@ lap_W=1;
 lap_H=2.5;
 
 
-   
-
-
 //case related
 /*[Gehäuse ]*/
-// Gehäuse Breite
-   oa_width = 160;
-//Gehäuse länge
-   oa_length = 140;
-//Gehäuse Höhe
-   oa_height =70;
-//eckenschräge
+// Case Width
+   oa_width = 150;
+//Case lenghth
+   oa_length = 120;
+//Case height
+   oa_height =50;
+//Cornerchamfer
    corner = 5;
-// Front Winkel
-   front_angle =5;
-//abstanf WInkel Unterkante
-   front_low_H = 20;
-//Wandstärke
+// Front Angle
+   front_angle =8;
+//Distance angled part to lower edge
+   front_low_H = 12;
+//Wallthickness
    oa_wallthick = 2.5;
 //trennlinie(Mittenabstand)
    cutline = 5;
 /*[Panel]*/
-// Panel Dicke
+// Panel thickness
    panel_t= 2;
-//Flanschdicke
+//Thicknes pannel holding flange
    flange_b=2;
-//flanschweite(Höhe)
+//height panelflange
    flange_t = 2.5;
-/*[Einbausteher]*/
-// Steher Muster
-   so_patterm = [[0,0,0],[0,49,0],[58,0,0],[58,49,0]];//
-// Steher X Offset
-   so_xoff = 70;
-// Steher Y Offset
-   so_yoff = 115;
-//Steher Höhe
+/*[Mounting Standoffs]*/
+// Standoff pattern(Mounts for stuffs)
+   so_patterm = [[0,0,0],[0,92,0],[92,0,0],[92,92,0]];//
+// Standoff X Offset
+   so_xoff = 98+24;
+// Standoff Y Offset
+   so_yoff =98-6;
+//Standoff height
    so_h = 3;
-//Steher D Außen
+//outer Diameter standoff
    so_d = 5;
-//Steher D Innen
+//inner Diameter standoff
    so_id = 2.5;
-/*[Verbindungsschraube]*/
-//Schraubendurchmesser
+/*[Connecting teh halfs]*/
+//Screw diameter
 scr_DM=3;
-//Senktiefe
+//dept recess of screw
 scr_recesT=10;
-//Durchmesser Schraubenkopf
+//Diameter screwhead
 scr_recesDM=7;
-//Gewindeeinsatz Durchmesser
+//diameter threadinsert
 scr_insDm=4.2;
-//Länge Gewindeeinsatz
+//length threadinsert
 scr_insT=6;
 
 
@@ -156,9 +153,9 @@ screwdist=3+(scr_recesDM/2);
                   body_shape();
                   resize([oa_width-(2*oa_wallthick),oa_length+0.1,oa_height-(2*(oa_wallthick-1))]) body_shape();
                }
-               translate([-((oa_width/2)+0.05),(oa_length/2),-(oa_height/2)+front_low_H]) rotate([front_angle,0,0]) cube([oa_width+0.1,oa_height+30,70]);
+               translate([-((oa_width/2)+0.05),(oa_length/2),-(oa_height/2)+front_low_H]) rotate([front_angle,0,0]) cube([oa_width+0.1,oa_height+20,50]);
             }
-            for(i=[0,128]){
+            for(i=[0,108]){
                translate([0,i,0])
                translate([0,-(oa_length/2)+panel_t+((flange_b+tolerance)/2),0])panelflange();
             }
@@ -200,7 +197,7 @@ screwdist=3+(scr_recesDM/2);
                   cylinder(so_id, so_h, 32);
                }
    }
-   module senkloch(th,l,sd,ed){ //th: durchgangsbohrung, bohngstiefe ,sd: enkdurchmesser, ed:extratiefe
+   module senkloch(th,l,sd,ed){ //th: durchgangsbohrung, bohngstiefe ,sd: senkdurchmesser, ed:extratiefe
       $fn=64;
       union(){
          cylinder(d=th,h=l);
@@ -210,18 +207,14 @@ screwdist=3+(scr_recesDM/2);
 
    }
 
-module fangrid(){
-  union(){
-   for(i=[0,60,120]){
-      rotate([0,0,i]) cube([66,2,1.5],center=true);
+
+  module bore(){
+      translate([-so_xoff/2,-so_yoff/2,0])
+      for(i=[0:len(so_patterm)-1])
+         //for (j=[0,mbc_hole_space])
+            translate(so_patterm[i]) cyl(so_id, so_h+6, 32);
    }
-   cylinder(d=24,h=1.5,center=true);
-   difference(){
-      cylinder(d=43,h=1.5,center=true);
-      translate([0,0,-0.25]) cylinder(d=39,h=3,center=true);
-   }
-  }
-}
+
 // 0: upper
 // 1: lower
 
@@ -239,13 +232,7 @@ module fangrid(){
       }
    }
 
-   module bore(){
-      translate([-so_xoff/2,-so_yoff/2,0])
-      for(i=[0:len(so_patterm)-1])
-         //for (j=[0,mbc_hole_space])
-            translate(so_patterm[i]) cyl(so_id, so_h+6, 32);
-   }
-
+ 
    module lowerhalf(){
       difference(){
          union(){
@@ -259,91 +246,37 @@ module fangrid(){
       }
    }
 
-module sq_cut(){
-   difference(){
-      cube([42,5,12]);
-      for(i=[0,42],j=[0,12]){
-         translate([i,0,j])
-         fillet_mask(l=11,r=5,orient=ORIENT_Y);
-      }
-   }
-}
-
 
 
 
 
    module frontpanel(){
 
-      pos_btn=[50,0,0];
-      
-      difference(){
-         fwpanel();
-            translate([-69.4,9.2,-15]) rotate([0,0,0]) hub();
-            translate([-61.5,8,-19.9]) screwholes_hub(3.5);
-            translate(pos_btn)  cube([16.5,10,16.5],center=true);
-      }
-   
-
+   fwpanel();
 
    }
+
    module backpanel(){
 
-      difference(){
-            fwpanel();
-            translate([15.5,0,10.1]) rotate([90,0,0]) cylinder(d=8,h=10,center=true);
-            translate([-34.5,-2.5,6]) sq_cut();
-            for(i=[0:5:30]){
-            translate([-70+i,0,23]) cube([2,5,15],center=true);}
-            for(i=[0:5:45]){
-            translate([70-i,0,23]) cube([3,5,15],center=true);}
-            
-   }
+      fwpanel();
+
    }
 
-module upperhalf_ed(){
-   union(){
-      difference(){
-         union(){
-            upperhalf();
-            translate([0,-25,33.25])
-            difference(){
-               cube(size=[66, 66, 1], center=true);
-               translate([0,0,-0.1]) cylinder(d1=58,d2=58,h=1,center=true,$fn=64);
-            }
-            
-         }
-         translate([-25,-50,34]) for(i=[0,50]){
-            for(j=[0,50]){
-               translate([i,j,-1]) cylinder(d=3.5,h=5,center=true);
-               translate([i,j,-0.5]) cylinder(d1=3.4,d2=6.5,h=1.6);
-            }
-         }
-         translate([0,-25,34.6]) cylinder(d1=58,d2=64,h=2.5,center=true,$fn=64);
-      }
-      translate([0,-25,34.25]) fangrid();}
+
+
+
+
+if (assembly == true) {
+
+  lowerhalf();
+   upperhalf();
+   //translate([0,50.9,0]) color("darkblue") frontpanel();
+   //translate([0,-56.9,0]) rotate([-180,0,0]) color("darkblue") backpanel();
+
 }
 
-
-if (assy == true) {
-
-   lowerhalf();
-  // upperhalf_ed();
-
-
-  translate([0,60.9,0]) color("darkblue") frontpanel();
-  translate([0,-66.9,0]) rotate([-180,0,0]) color("darkblue") backpanel();
-
-   translate([4,-36,-14.5]) pcb(RPI4);
-   translate([0,-25,20]) rotate([0,0,0]) fan(fan60x25);
-   translate([25,50.5,-15]) rotate([0,0,180]) hub();
-   translate([25,50.56,-19.9]) rotate([0,0,180]) HUB_CONSOLE();
-}
-if(part=="unten") lowerhalf();
-if(part=="oben") upperhalf_ed();
+if(part=="lower") lowerhalf();
+if(part=="upper") upperhalf();
 if(part=="frontpanel") frontpanel();
 if(part=="backpanel") backpanel();
-
-
-
 

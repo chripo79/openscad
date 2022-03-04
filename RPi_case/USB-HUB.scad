@@ -45,6 +45,11 @@ module hub(){
   translate([23.2,11,13.1]) rotate([-90,0,0]) usbconn();
 }
 
+module screwholes_hub(diameter){
+  translate([-4.5,-8,-1]) rotate([90,0,0]) cylinder(d=diameter,h=5,center=true,$fn=256);
+  translate([91,-8,-1]) rotate([90,0,0]) cylinder(d=diameter,h=5,center=true,$fn=256);
+}
+
 module HUB_CONSOLE(){
   
   difference(){
@@ -58,6 +63,7 @@ module HUB_CONSOLE(){
             translate([i,j,1]) cylinder(d=3,h=2,center=true);
           }
         }
+
         translate([-1.5-7,-9.6,-5]) cube([console_body[0]+14,3,8]);
       translate([-1.5,31,-1]) rotate([-90,0,-90]) rippe(1.5);
       translate([console_body[0]-3,31,-1]) rotate([-90,0,-90]) rippe(1.5);
@@ -69,9 +75,8 @@ module HUB_CONSOLE(){
         translate([i,j,1]) cylinder(d=1.5 ,h=4,center=true);
       }
     }
-  #translate([-4.5,-8,-1]) rotate([90,0,0]) cylinder(d=4.1,h=5,center=true,$fn=256);
-  translate([91,-8,-1]) rotate([90,0,0]) cylinder(d=4.1,h=5,center=true,$fn=256);
-
+  
+  screwholes_hub(4.1);
   }
 }
 module distance(){
@@ -83,7 +88,7 @@ module distance(){
 }
 
 
-
-//HUB_CONSOLE();
+hub();
+HUB_CONSOLE();
 distance();
 
