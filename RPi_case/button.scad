@@ -16,7 +16,7 @@ rotate([0,0,i])
 translate([0,8,2]) rotate([45,0,0]) cube([16,1*sqrt(2),1*sqrt(2)],center=true);}}
 
 translate([0,0,-1.5])difference(){
-   cube([16,16,3],center=true);
-   cube([13,13,3],center=true);
+   cube([16,16,5],center=true);
+   cube([13,13,5],center=true);
    }
 }

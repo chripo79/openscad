@@ -12,9 +12,9 @@ $fn=20;
 //##definitions##
 /*[Anzeigen ]*/
 //Assembly anzeigen
-assy=true;
+assy=false;
 //enizelteile
-part="kein";//[kein,unten,oben,frontpanel,backpanel]
+part="kein";//[kein,unten,oben,frontpanel,backpanel,buttonholder]
 //Detail
 /*[Hidden]*/
 
@@ -276,14 +276,20 @@ module sq_cut(){
    module frontpanel(){
 
       pos_btn=[50,0,0];
-      
+union(){
       difference(){
          fwpanel();
             translate([-69.4,9.2,-15]) rotate([0,0,0]) hub();
             translate([-61.5,8,-19.9]) screwholes_hub(3.5);
             translate(pos_btn)  cube([16.5,10,16.5],center=true);
+            
       }
-   
+      translate(pos_btn+[0,-1.5,0])
+      difference(){
+      cube([22,3,22],center=true);
+      cube([20,3,20],center=true);
+      }
+}
 
 
    }
@@ -300,17 +306,23 @@ module sq_cut(){
             
    }
    }
-
+   module buttonholder(){
+      difference(){
+      cube([20,10,20],center=true);
+      translate([0,2,0]) cube([18,8,18],center=true);
+      cube([14.2,11,14.2],center=true);
+   }
+   }
 module upperhalf_ed(){
    union(){
       difference(){
          union(){
             upperhalf();
-            translate([0,-25,33.25])
-            difference(){
-               cube(size=[66, 66, 1], center=true);
-               translate([0,0,-0.1]) cylinder(d1=58,d2=58,h=1,center=true,$fn=64);
-            }
+            //translate([0,-25,33.25])
+            //difference(){
+               //cube(size=[66, 66, 1], center=true);
+              // translate([0,0,-0.1]) cylinder(d1=58,d2=58,h=1,center=true,$fn=64);
+            //}
             
          }
          translate([-25,-50,34]) for(i=[0,50]){
@@ -345,5 +357,5 @@ if(part=="frontpanel") frontpanel();
 if(part=="backpanel") backpanel();
 
 
-
+upperhalf_ed();
 
