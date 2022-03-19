@@ -12,7 +12,7 @@ $fn=20;
 //##definitions##
 /*[Anzeigen ]*/
 //Assembly anzeigen
-assy=false;
+assy=true;
 //enizelteile
 part="kein";//[kein,unten,oben,frontpanel,backpanel,buttonholder]
 //Detail
@@ -261,8 +261,8 @@ module fangrid(){
 
 module sq_cut(){
    difference(){
-      cube([42,5,12]);
-      for(i=[0,42],j=[0,12]){
+      cube([45,5,12]);
+      for(i=[0,45],j=[0,12]){
          translate([i,0,j])
          fillet_mask(l=11,r=5,orient=ORIENT_Y);
       }
@@ -282,13 +282,18 @@ union(){
             translate([-69.4,9.2,-15]) rotate([0,0,0]) hub();
             translate([-61.5,8,-19.9]) screwholes_hub(3.5);
             translate(pos_btn)  cube([16.5,10,16.5],center=true);
-            
+            translate([-40,0,14]) rotate([180,-90,90]) for(i=[-16.5,16.5]){
+               translate([0,i,0]) cylinder(d=3.8,h=6,center=true,$fn=64);
+            }
+            translate([-40,0,14]) cube([24,20,3],center=true);
       }
       translate(pos_btn+[0,-1.5,0])
       difference(){
-      cube([22,3,22],center=true);
-      cube([20,3,20],center=true);
+         cube([22,3,22],center=true);
+         cube([20,3,20],center=true);
+         
       }
+      color("white") translate([20,0.9,2]) rotate([90,0,180]) legend();
 }
 
 
@@ -335,12 +340,16 @@ module upperhalf_ed(){
       }
       translate([0,-25,34.25]) fangrid();}
 }
-
+ module legend(){
+   linear_extrude(height=0.4){
+         //logo
+         translate([-35,16,0])  text("Raspi 4",font="Rockwell:style=Bold",size=6);
+   }}
 
 if (assy == true) {
 
    lowerhalf();
-  // upperhalf_ed();
+   upperhalf_ed();
 
 
   translate([0,60.9,0]) color("darkblue") frontpanel();
@@ -350,12 +359,11 @@ if (assy == true) {
    translate([0,-25,20]) rotate([0,0,0]) fan(fan60x25);
    translate([25,50.5,-15]) rotate([0,0,180]) hub();
    translate([25,50.56,-19.9]) rotate([0,0,180]) HUB_CONSOLE();
+   translate([-40,65,14]) rotate([180,-90,90]) sdcardslot();
 }
 if(part=="unten") lowerhalf();
 if(part=="oben") upperhalf_ed();
 if(part=="frontpanel") frontpanel();
 if(part=="backpanel") backpanel();
-
-
-upperhalf_ed();
+//frontpanel();
 

@@ -10,13 +10,13 @@ translate([0,0,-stem_h/2])
       }
    }
 difference(){
-translate([0,0,1]) cube([16,16,2],center=true);
+translate([0,0,1]) cube([15.6,15.6,2],center=true);
    for(i=[0:90:270]){
 rotate([0,0,i])   
 translate([0,8,2]) rotate([45,0,0]) cube([16,1*sqrt(2),1*sqrt(2)],center=true);}}
 
 translate([0,0,-1.5])difference(){
-   cube([16,16,5],center=true);
+   cube([15.6,15.6,5],center=true);
    cube([13,13,5],center=true);
    }
 }

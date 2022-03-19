@@ -86,9 +86,36 @@ module distance(){
  }
 
 }
+//Variables SDcaardslot
+sdcad=[2,24,5.5];
 
 
-hub();
-HUB_CONSOLE();
-distance();
+module sdcardslot() {
+difference(){
+  hull(){
+  translate([0,-16.5,0]) cylinder(d=6,h=5.5,center=true,$fn=64);
+  translate([0,16.5,0]) cylinder(d=6,h=5.5,center=true,$fn=64);
+}
+  translate([0,0,-1.5]) cube(sdcad,center=true);
+  translate([1.5,0,14]) rotate([0,90,0])
+  intersection(){
+  cylinder(d=30,h=5,center=true,$fn=128);
+  cube([30,12,5],center=true);
+  }
+  for(i=[-16.5,16.5]){
+    translate([0,i,0]) cylinder(d=3.8,h=6,center=true,$fn=64);
+  }
+  for(i=[-16.5,16.5]){
+    translate([0,i,2]) cylinder(d=7.8,h=2,center=true,$fn=64);
+  }
+  for(i=[-16.5,16.5]){
+    translate([0,i,2]) cube([7,5.2,2],center=true);
+  }
+}
 
+}
+
+//hub();
+//HUB_CONSOLE();
+//distance();
+//sdcardslot();
