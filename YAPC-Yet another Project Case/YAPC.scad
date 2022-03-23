@@ -1,6 +1,6 @@
-/*### Z80 MBC2 pretty case###
-# designed 2021 by C.PohlAAaaa     ∑
-# Creative commons##
+/*### YAPC- Yet another project case###
+# designed 2021 by C.Pohl  #   
+# 
 #uses the BOSL Library
 */
 include <BOSL/constants.scad>
